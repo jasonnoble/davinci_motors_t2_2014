@@ -14,7 +14,10 @@
   </div>
 <% end %>
 
-<%= yield %>
+<div class="container">
+  <%= render partial: 'layouts/authentication' %>
+  <%= yield %>
+</div>
 
 </body>
 </html>

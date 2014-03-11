@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
+gem 'bcrypt-ruby'
 
 gem 'rspec-rails'
 gem 'guard-bundler'
@@ -9,6 +10,7 @@ gem 'guard-rspec'
 gem 'factory_girl_rails'
 group :test do
   gem 'capybara'
+  gem 'shoulda-matchers'
 end
 group :development do
   gem 'ruby_gntp'
