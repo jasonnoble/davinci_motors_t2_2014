@@ -1,1 +1,24 @@
+<table>
+  <tr>
+    <th>Year</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Price</th>
+    <th colspan="3">Actions</th>
+  </tr>
+
+  <% @cars.each do |car| %>
+    <tr id="<%= dom_id(car) %>">
+      <td><%= car.year %></td>
+      <td><%= car.make %></td>
+      <td><%= car.model %></td>
+      <td><%= number_to_currency(car.price) %></td>
+      <td><%= link_to 'Show', car %></td>
+      <td><%= link_to 'Edit', edit_car_path(car), id: "edit_car_#{car.id}" %></td>
+      <td><%= link_to 'Delete', car, method: :delete, data: { confirm: 'Really delete a car?'} %></td>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'New Car', new_car_path %>
+
