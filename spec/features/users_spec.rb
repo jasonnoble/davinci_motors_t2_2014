@@ -20,3 +20,4 @@ feature "User Authentication" do
     expect(page).to have_text('Signed in as ted@smith.com')
   end
 end
+
