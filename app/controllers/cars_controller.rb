@@ -1,8 +1,11 @@
 class CarsController < ApplicationController
-  before_action :find_car, only: [:edit, :update, :destroy]
+  before_action :find_car, only: [:show, :edit, :update, :destroy]
 
   def index
     @cars = Car.all
+  end
+
+  def show
   end
 
   def new
