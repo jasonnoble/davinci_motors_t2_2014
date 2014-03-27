@@ -4,4 +4,14 @@ DavinciMotors::Application.routes.draw do
   resources :cars
 
   resources :users, only: [:new, :create]
+
+  get 'login',
+      to: 'sessions#login',
+      as: 'login'
+
+  post 'login',
+       to: 'sessions#create'
+
+  delete 'logout',
+         to: 'sessions#destroy'
 end

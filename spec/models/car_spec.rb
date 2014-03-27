@@ -14,7 +14,7 @@ describe Car do
         expect(car.errors[:price]).to be_present
       end
 
-      it "validates value is between 0.01 and 999999.99" do
+      it "validates value is between 0.01 and 999_999.99" do
         car = Car.new(make: 'Ford', model: 'Fusion', year: 2007, price: 2350.00)
 
         expect(car).to be_valid
