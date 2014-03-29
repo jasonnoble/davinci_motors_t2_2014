@@ -6,6 +6,8 @@ gem 'bcrypt-ruby'
 gem 'faker'
 gem 'byebug'
 
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 
 gem 'rspec-rails'
 gem 'guard-bundler'
