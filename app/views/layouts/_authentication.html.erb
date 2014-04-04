@@ -1,4 +1,5 @@
 <% if current_user.present? %>
+  <%= link_to 'My Cars', my_cars_path %>
   Signed in as <%= current_user.email %>
   <%= link_to 'Logout', logout_path, method: :delete %>
 <% else %>

@@ -1,8 +1,24 @@
 class CarsController < ApplicationController
-  before_action :find_car, only: [:show, :edit, :update, :destroy]
+  before_action :find_car, only: [:show, :edit, :update, :destroy, :claim]
 
   def index
-    @cars = Car.all
+    @cars = Car.where(user_id: nil)
+  end
+
+  def my_cars
+    @cars = Car.where(user: current_user)
+    render action: 'index'
+  end
+
+  def claim
+    @car.user = current_user
+    if @car.save
+      redirect_to root_path,
+        notice: "#{@car.make} #{@car.model} has been moved to your inventory"
+    else
+      redirect_to root_path,
+        error: "Unable to claim car"
+    end
   end
 
   def show
