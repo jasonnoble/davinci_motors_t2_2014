@@ -1,0 +1,20 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to 'DaVinci Motors', root_path, class: 'brand' %>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Nav Link 1" %></li>
+          <li><%= link_to "Nav Link 2" %></li>
+          <li><%= link_to "Nav Link 3" %></li>
+        </ul>
+        <%= render partial: 'layouts/authentication' %>
+      </div>
+    </div>
+  </div>
+</div>
