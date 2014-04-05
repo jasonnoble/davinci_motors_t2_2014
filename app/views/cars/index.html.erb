@@ -13,6 +13,7 @@
       <td><%= car.make %></td>
       <td><%= car.model %></td>
       <td><%= number_to_currency(car.price) %></td>
+      <td><%= link_to 'Claim', claim_car_path(car) %></td>
       <td><%= link_to 'Show', car %></td>
       <td><%= link_to 'Edit', edit_car_path(car), id: "edit_car_#{car.id}" %></td>
       <td><%= link_to 'Delete', car, method: :delete, data: { confirm: 'Really delete a car?'} %></td>

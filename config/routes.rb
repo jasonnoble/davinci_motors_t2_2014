@@ -1,7 +1,17 @@
 DavinciMotors::Application.routes.draw do
   root to: 'cars#index'
 
-  resources :cars
+  resources :cars do
+    member do
+      get 'claim'
+    end
+
+    #collection do
+    #  ...
+    #end
+  end
+
+  get 'my_cars', to: 'cars#my_cars'
 
   resources :users, only: [:new, :create]
 

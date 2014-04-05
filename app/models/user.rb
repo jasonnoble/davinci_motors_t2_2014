@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
     if: lambda { |user| !user.omniauth? }
   validates_presence_of :password_confirmation, :on => :create,
     if: lambda { |user| !user.omniauth? && user.password.present? }
+
+  has_many :cars
 end
