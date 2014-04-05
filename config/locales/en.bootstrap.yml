@@ -9,8 +9,9 @@ en:
       cancel: "Cancel"
       confirm: "Are you sure?"
       destroy: "Delete"
-      new: "New"
+      new: "New %{model}"
       edit: "Edit"
+      claim: "Claim"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"
