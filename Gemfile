@@ -5,6 +5,7 @@ gem 'rails', '4.0.3'
 gem 'bcrypt-ruby'
 gem 'faker'
 gem 'byebug'
+gem 'twitter-bootstrap-rails'
 
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
