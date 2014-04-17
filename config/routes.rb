@@ -28,4 +28,6 @@ DavinciMotors::Application.routes.draw do
          to: 'sessions#destroy'
 
   get 'auth/:provider/callback', to: 'sessions#oauth'
+
+  get '/verification/:token', to: 'users#verify', as: 'verify_email'
 end

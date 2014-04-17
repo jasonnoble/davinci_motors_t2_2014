@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
     if: lambda { |user| !user.omniauth? && user.password.present? }
 
   has_many :cars
+
+  def needs_verification!
+    update_attributes(
+      verified_email: false,
+      token: SecureRandom.urlsafe_base64,
+    )
+    UserNotifier.signed_up(self).deliver
+  end
 end

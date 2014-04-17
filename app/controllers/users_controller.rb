@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.needs_verification!
       session[:user_id] = @user.id
       redirect_to root_path,
         notice: "Thank you for signing up #{@user.first_name}"
@@ -18,7 +19,6 @@ class UsersController < ApplicationController
   def user_params
     user_parameters = [:first_name, :last_name, :email,
             :password, :password_confirmation, :omniauth]
-    user_parameters << :admin if current_user.is_admin?
     params.require(:user).permit(
       *user_parameters)
   end

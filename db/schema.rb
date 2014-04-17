@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410032756) do
+ActiveRecord::Schema.define(version: 20140417013433) do
 
   create_table "cars", force: true do |t|
     t.string   "make"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20140410032756) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "omniauth"
+    t.boolean  "verified_email",  default: false
+    t.string   "token",           default: ""
   end
 
 end
