@@ -16,8 +16,10 @@ class UsersController < ApplicationController
 
   private
   def user_params
+    user_parameters = [:first_name, :last_name, :email,
+            :password, :password_confirmation, :omniauth]
+    user_parameters << :admin if current_user.is_admin?
     params.require(:user).permit(
-      :first_name, :last_name, :email,
-      :password, :password_confirmation, :omniauth)
+      *user_parameters)
   end
 end

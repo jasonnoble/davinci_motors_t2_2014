@@ -1,4 +1,6 @@
 DavinciMotors::Application.routes.draw do
+  resources :products
+
   root to: 'cars#index'
 
   resources :cars do
